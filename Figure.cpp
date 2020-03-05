@@ -5,15 +5,15 @@ Figure::Figure(const char* gettexture, Grid * g)
 	renFig = g->getRend();
 	Fig_text = Preloads::load_tex(gettexture, renFig);
 
-	srcRec.x = 20;
+	srcRec.x = 70;
 	srcRec.y = 40;
 	srcRec.w = 20;
 	srcRec.h = 40;
 
 	distRec.x = g->boardRec.x + 10;
 	distRec.y = g->boardRec.y + 10;
-	distRec.w = g->boardRec.w / 10;
-	distRec.h = g->boardRec.h / 8;
+	distRec.w = g->boardRec.w / 9;
+	distRec.h = g->boardRec.h / 7;
 
 	move = false;
 }
