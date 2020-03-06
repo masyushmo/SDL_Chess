@@ -52,10 +52,43 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="Assets\Board.png">
+    <Image Include="Assets\BB.png">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="Assets\Figures.png">
+    <Image Include="Assets\BK.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\BN.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\Board1.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\BP.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\BQ.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\BR.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\WB.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\WK.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\WN.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\WP.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\WQ.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\WR.png">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

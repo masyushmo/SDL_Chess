@@ -156,8 +156,19 @@
     <ClInclude Include="sdl.h" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="Assets\Board.png" />
-    <Image Include="Assets\Figures.png" />
+    <Image Include="Assets\BB.png" />
+    <Image Include="Assets\BK.png" />
+    <Image Include="Assets\BN.png" />
+    <Image Include="Assets\Board1.png" />
+    <Image Include="Assets\BP.png" />
+    <Image Include="Assets\BQ.png" />
+    <Image Include="Assets\BR.png" />
+    <Image Include="Assets\WB.png" />
+    <Image Include="Assets\WK.png" />
+    <Image Include="Assets\WN.png" />
+    <Image Include="Assets\WP.png" />
+    <Image Include="Assets\WQ.png" />
+    <Image Include="Assets\WR.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

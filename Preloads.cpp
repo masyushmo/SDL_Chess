@@ -7,8 +7,10 @@ Preloads::~Preloads()
 	std::cout << "Prefs CLEANED!" << std::endl;
 }
 
-SDL_Texture* Preloads::load_tex(const char* path, SDL_Renderer * ren)
+SDL_Texture* Preloads::load_tex(std::string spath, SDL_Renderer* ren)
 {
+	char* path = new char[spath.length() + 1];
+	strcpy_s(path, spath.length() + 1, spath.c_str());
 	SDL_Surface * temp = IMG_Load(path);
 	if (temp == NULL)
 	{

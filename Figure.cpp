@@ -1,19 +1,14 @@
 #include "Figure.h"
 
-Figure::Figure(const char* gettexture, Grid * g)
+Figure::Figure(std::string gettexture, Grid* g, int xpos, int ypos)
 {
 	renFig = g->getRend();
 	Fig_text = Preloads::load_tex(gettexture, renFig);
 
-	srcRec.x = 70;
-	srcRec.y = 40;
-	srcRec.w = 20;
-	srcRec.h = 40;
-
-	distRec.x = g->boardRec.x + 10;
-	distRec.y = g->boardRec.y + 10;
-	distRec.w = g->boardRec.w / 9;
-	distRec.h = g->boardRec.h / 7;
+	distRec.x = xpos;
+	distRec.y = ypos;
+	distRec.w = g->boardRec.w / 10;
+	distRec.h = g->boardRec.h / 5;
 
 	move = false;
 }
@@ -26,7 +21,6 @@ Figure::~Figure()
 Figure::Figure(Figure const& src)
 {
 	renFig = src.renFig;
-	srcRec = src.srcRec;
 	distRec = src.distRec;
 	Fig_text = src.Fig_text;
 	move = false;
@@ -37,7 +31,6 @@ Figure& Figure::operator=(Figure const& src)
 	if (this != &src)
 	{
 		renFig = src.renFig;
-		srcRec = src.srcRec;
 		distRec = src.distRec;
 		Fig_text = src.Fig_text;
 		move = false;
@@ -52,5 +45,5 @@ void Figure::Update()
 
 void Figure::Render()
 {
-	SDL_RenderCopy(renFig, Fig_text, &srcRec, &distRec);
+	SDL_RenderCopy(renFig, Fig_text, NULL, &distRec);
 }

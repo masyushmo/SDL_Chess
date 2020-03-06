@@ -1,14 +1,14 @@
 #include "Grid.h"
 
-Grid::Grid(const char* gettexture, SDL_Renderer* ren)
+Grid::Grid(std::string gettexture, SDL_Renderer* ren)
 {
 	renGrid = ren;
 	Grid_text = Preloads::load_tex(gettexture, renGrid);
 
-	boardRec.x = 50;
-	boardRec.y = 100;
 	boardRec.w = W_W / 2;
 	boardRec.h = W_H / 2;
+	boardRec.x = (W_W - boardRec.w) / 2;
+	boardRec.y = (W_H - boardRec.h) / 2;
 }
 
 Grid::~Grid()

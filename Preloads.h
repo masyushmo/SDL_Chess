@@ -15,7 +15,7 @@ public:
 
 	Preloads();
 	
-	static SDL_Texture* load_tex(const char* path, SDL_Renderer * ren);
+	static SDL_Texture* load_tex(const std::string spath, SDL_Renderer * ren);
 	
 	//SDL_Surface** load_group(int w, int h, const char* path);
 	//void		resize_surf(int w, int h, SDL_Surface ** surf);

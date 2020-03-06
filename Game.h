@@ -5,6 +5,8 @@
 #include "Grid.h"
 #include "Figure.h"
 
+enum FigCode { BK = -6, BQ, BR, BB, BN, BP, Dead, WP, WN, WB, WR, WQ, WK }; //  (P)awn, (N*K)night, (B)ishop, (R)ook, (Q)ueen, (K)ing
+
 class Grid;
 class Figure;
 
@@ -15,10 +17,10 @@ private:
 
 	MySDL	ms;
 	Grid * g;
-	Figure* f;
+	Figure* f[32];
 	bool is_run;
-	int	xpos;
-	int ypos;
+	int	currX;
+	int currY;
 
 	Game();
 	Game(Game const& src) = delete;
@@ -35,6 +37,8 @@ public:
 	void clean();
 
 	bool is_running() { return is_run; }
+
+	void Init_figures(Grid * g);
 };
 
 

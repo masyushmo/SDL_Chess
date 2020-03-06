@@ -16,7 +16,7 @@ int MySDL::init_SDL(const char* title, int xpos, int ypos, int width, int height
 	if (!(rend = SDL_CreateRenderer(win, -1, \
 		SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC)))
 		init_error("Render could not be created! SDL_Error: %s\n");
-	SDL_SetRenderDrawColor(rend, 255, 0, 0, 255);
+	SDL_SetRenderDrawColor(rend, 100, 100, 100, 255);
 	if (!(win_tex = SDL_CreateTexture(rend, SDL_PIXELFORMAT_ARGB8888, \
 		SDL_TEXTUREACCESS_TARGET, width, height)))
 		init_error("Window texture could not be created! SDL_Error: %s\n");

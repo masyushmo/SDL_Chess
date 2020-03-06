@@ -1,7 +1,6 @@
 #ifndef FIGURE_H
 #define FIGURE_H
 
-#include "Game.h"
 #include "Grid.h"
 
 class Grid;
@@ -10,7 +9,6 @@ class Figure
 {
 	SDL_Renderer* renFig;
 	SDL_Texture* Fig_text;
-	SDL_Rect srcRec;
 
 public:
 
@@ -18,7 +16,7 @@ public:
 	bool move;
 
 	Figure() = delete;
-	Figure(const char* gettexture, Grid * g);
+	Figure(std::string gettexture, Grid * g, int xpos, int ypos);
 	~Figure();
 	Figure(Figure const& src);
 	Figure& operator=(Figure const& src);
