@@ -7,8 +7,8 @@ Figure::Figure(std::string gettexture, Grid* g, int xpos, int ypos)
 
 	distRec.x = xpos;
 	distRec.y = ypos;
-	distRec.w = g->boardRec.w / 10;
-	distRec.h = g->boardRec.h / 5;
+	distRec.w = g->gridRec.w;
+	distRec.h = g->gridRec.h;
 
 	move = false;
 }
@@ -47,3 +47,5 @@ void Figure::Render()
 {
 	SDL_RenderCopy(renFig, Fig_text, NULL, &distRec);
 }
+
+SDL_Texture* Figure::getTexture() const { return Fig_text; }

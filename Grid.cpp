@@ -6,9 +6,15 @@ Grid::Grid(std::string gettexture, SDL_Renderer* ren)
 	Grid_text = Preloads::load_tex(gettexture, renGrid);
 
 	boardRec.w = W_W / 2;
-	boardRec.h = W_H / 2;
+	boardRec.h = boardRec.w;
 	boardRec.x = (W_W - boardRec.w) / 2;
 	boardRec.y = (W_H - boardRec.h) / 2;
+	offB = { 15, 5, 4};
+
+	gridRec.x = boardRec.x + offB[0];
+	gridRec.y = boardRec.y + offB[1];
+	gridRec.w = boardRec.w / 8 - offB[2];
+	gridRec.h = gridRec.w;
 }
 
 Grid::~Grid()

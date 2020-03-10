@@ -23,6 +23,7 @@ public:
 
 	void Update();
 	void Render();
+	SDL_Texture* getTexture() const;
 };
 
 #endif

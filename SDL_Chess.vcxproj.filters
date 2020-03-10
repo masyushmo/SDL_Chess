@@ -52,6 +52,9 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <Image Include="Assets\Board.png">
+      <Filter>Resource Files</Filter>
+    </Image>
     <Image Include="Assets\BB.png">
       <Filter>Resource Files</Filter>
     </Image>
@@ -59,9 +62,6 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="Assets\BN.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="Assets\Board1.png">
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="Assets\BP.png">

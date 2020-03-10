@@ -159,7 +159,7 @@
     <Image Include="Assets\BB.png" />
     <Image Include="Assets\BK.png" />
     <Image Include="Assets\BN.png" />
-    <Image Include="Assets\Board1.png" />
+    <Image Include="Assets\Board.png" />
     <Image Include="Assets\BP.png" />
     <Image Include="Assets\BQ.png" />
     <Image Include="Assets\BR.png" />

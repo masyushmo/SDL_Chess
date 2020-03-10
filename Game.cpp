@@ -9,12 +9,12 @@ int board[8][8] = { BR, BN, BB, BQ, BK, BB, BN, BR,
 				    WP, WP, WP, WP, WP, WP, WP, WP,
 				    WR, WN, WB, WQ, WK, WB, WN, WR, };
 
-int offBX = 100;
-int offBY = 30;
+int offBX = 10;
+int offBY = 10;
 
 Game::Game() : ms(), is_run(true)
 {
-	g = new Grid("./Assets/Board1.png", ms.rend);
+	g = new Grid("./Assets/Board.png", ms.rend);
 	Init_figures(g);
 	currX = 0;
 	currY = 0;
@@ -58,13 +58,11 @@ void Game::Init_figures(Grid * g)
 			#undef PROCESS_VAL
 
 			f[count] = new Figure("./Assets/" + sfig + ".png",
-				g, g->boardRec.x * i, g->boardRec.y * j);
+				g, g->gridRec.x + (g->gridRec.w * j) , g->gridRec.y + (g->gridRec.h * i));
 			count++;
 		}
 		
 	}
-
-	//Figure * BB = new Figure("./Assets/BB.png", g, 10, 10);
 }
 
 
@@ -80,43 +78,36 @@ void Game::events()
 	{
 		if (event.button.button == SDL_BUTTON_LEFT)
 		{
-			if (currX > f[0]->distRec.x&& currX < f[0]->distRec.x + f[0]->distRec.w &&
-				currY > f[0]->distRec.y&& currY < f[0]->distRec.y + f[0]->distRec.h)
-				f[0]->move = (!f[0]->move) ? true : false;
+			for (int i = 0; i < 32; i++)
+			{
+				if (currX > f[i]->distRec.x&& currX < f[i]->distRec.x + f[i]->distRec.w &&
+					currY > f[i]->distRec.y&& currY < f[i]->distRec.y + f[i]->distRec.h)
+				{
+					if (!f[i]->move)
+					{
+						f[i]->move = true;
+					}
+					else
+					{
+						board[3][3] = BB;
+					}
+				}
+				
+			}
 		}
 	}
 	else if (event.type == SDL_MOUSEMOTION)
 	{
-		if (f[0]->move == true)
+		for (int i = 0; i < 32; i++)
 		{
-			f[0]->distRec.x += event.motion.xrel;
-			f[0]->distRec.y += event.motion.yrel;
+			if (f[i]->move)
+			{
+				f[i]->distRec.x += event.motion.xrel;
+				f[i]->distRec.y += event.motion.yrel;
+			}
 		}
 	}
 
-//	// This should loop over all the sprites available for grabbing
-//	for (int i = 0; i < numSprites; i++)
-//	{
-//		if (isInBoundingRegion(event.button.x, event.button.y,
-//			mySprites[i]))
-//			dragSprite = mySprites[i];
-//		else
-//			dragSprite = NULL;
-//	}
-//}
-//else if (event.type == SDL_MOUSE_BUTTON_UP)
-//{
-//dragSprite = NULL;
-//}
-//else if (event.type == SDL_MOUSE_MOTION)
-//{
-//if (dragSprite != NULL)
-//{
-//	dragSprite->x += event.motion.xrel;
-//	dragSprite->y += event.motion.yrel;
-//}
-//}
-//}
 }
 
 void Game::update()
@@ -132,6 +123,7 @@ void Game::render()
 	g->Render();
 	for (int i = 0; i < 32; i++)
 		f[i]->Render();
+	//SDL_RenderFillRect(ms.rend, &g->gridRec);
 	//SDL_DestroyTexture(ms.win_tex);
 	//SDL_RenderCopy(ms.rend, text, NULL, NULL);
 	SDL_RenderPresent(ms.rend);

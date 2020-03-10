@@ -5,6 +5,9 @@
 #include "Grid.h"
 #include "Figure.h"
 
+#include <map>
+#include <string>
+
 enum FigCode { BK = -6, BQ, BR, BB, BN, BP, Dead, WP, WN, WB, WR, WQ, WK }; //  (P)awn, (N*K)night, (B)ishop, (R)ook, (Q)ueen, (K)ing
 
 class Grid;
